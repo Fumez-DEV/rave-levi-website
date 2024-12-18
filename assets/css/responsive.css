@@ -1,0 +1,65 @@
+/* Responsive Styles for Rave Levi Nails */
+
+/* General Mobile Styles */
+body {
+    font-size: 14px;
+}
+
+header nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+header .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+header .cta {
+    align-self: stretch;
+    text-align: center;
+}
+
+/* Hero Section */
+#hero h1 {
+    font-size: 1.8rem;
+}
+
+#hero p {
+    font-size: 1rem;
+}
+
+/* Services Section */
+.service {
+    margin-bottom: 1rem;
+}
+
+.service h3 {
+    font-size: 1.2rem;
+}
+
+/* Portfolio Section */
+.gallery {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.5rem;
+}
+
+/* Contact Section */
+.contact-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 0.75rem;
+}
+
+/* Footer */
+footer {
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+footer .social-icons a {
+    display: inline-block;
+    margin: 0 0.25rem;
+}
