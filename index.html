@@ -7,28 +7,36 @@
     <title>רווה לוי ניילס - תל אביב והסביבה</title>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Noto+Sans+Hebrew:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <!--link rel="stylesheet" href="assets/css/responsive.css"-->
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <nav>
-            <div class="logo">רווה לוי ניילס</div>
-            <ul class="nav-links">
-                <li><a href="#about">אודות</a></li>
-                <li><a href="#services">שירותים</a></li>
-                <li><a href="#portfolio">גלריה</a></li>
-                <li><a href="#contact">יצירת קשר</a></li>
-            </ul>
-            <a href="https://wa.me/" class="cta">קביעת תור בוואטסאפ</a>
-        </nav>
-    </header>
+
+<!-- Header Section -->
+<header>
+    <nav aria-label="Main Navigation">
+        <div class="logo" aria-label="רווה לוי ניילס - דף הבית">
+            <a href="#hero">
+                <img src="assets/images/rl-nails-logo.JPEG" alt="Rave Levi Logo">
+            </a>
+        </div>
+        <button class="menu-toggle" aria-label="פתח תפריט">☰</button>
+        <ul class="nav-links">
+            <li><a href="#about" aria-label="מעבר לאודות">אודות</a></li>
+            <li><a href="#services" aria-label="מעבר לשירותים">שירותים</a></li>
+            <li><a href="#portfolio" aria-label="מעבר לגלריה">גלריה</a></li>
+            <li><a href="#contact" aria-label="מעבר ליצירת קשר">יצירת קשר</a></li>
+        </ul>
+        <a href="https://wa.me/" class="cta" aria-label="קביעת תור בוואטסאפ">קביעת תור בוואטסאפ</a>
+    </nav>
+</header>
 
     <!-- Hero Section -->
     <section id="hero">
-        <h1>מניקור ופדיקור בג'ל בתל אביב</h1>
-        <p>עיצוב ציפורניים ברמה הגבוהה ביותר עם חיזוק ושמירה על בריאות הציפורן.</p>
-        <a href="#contact" class="hero-btn">צרי קשר עכשיו</a>
+        <div class="hero-content">
+            <h1>מניקור ופדיקור בג'ל בתל אביב</h1>
+            <p>עיצוב ציפורניים ברמה הגבוהה ביותר עם חיזוק ושמירה על בריאות הציפורן.</p>
+            <a href="#contact" class="hero-btn">צרי קשר עכשיו</a>
+        </div>
     </section>
 
     <!-- About Section -->
@@ -54,15 +62,42 @@
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio">
-        <h2>גלריה</h2>
-        <div class="gallery">
-            <img src="assets/images/hero.jpg" alt="מניקור 1">
-            <img src="assets/images/hero.jpg" alt="מניקור 2">
-            <img src="assets/images/hero.jpg" alt="מניקור 3">
+<!-- Portfolio Section -->
+<section id="portfolio">
+    <h2>העבודות שלנו</h2>
+    <div class="portfolio-gallery">
+        <div class="portfolio-item">
+            <img src="assets/images/nails/nail1.jpeg" alt="Nail Design 1">
         </div>
-    </section>
+        <div class="portfolio-item">
+            <img src="assets/images/nails/nail2.jpeg" alt="Nail Design 2">
+        </div>
+        <div class="portfolio-item">
+            <img src="assets/images/nails/nail3.jpeg" alt="Nail Design 3">
+        </div>
+        <div class="portfolio-item">
+            <img src="assets/images/nails/nail4.jpeg" alt="Nail Design 4">
+        </div>
+        <div class="portfolio-item">
+            <img src="assets/images/nails/nail5.jpeg" alt="Nail Design 5">
+        </div>
+        <div class="portfolio-item">
+            <img src="assets/images/nails/nail6.jpeg" alt="Nail Design 6">
+        </div>
+        <div class="portfolio-item">
+            <img src="assets/images/nails/nail7.jpeg" alt="Nail Design 7">
+        </div>
+        <div class="portfolio-item">
+            <img src="assets/images/nails/nail8.jpeg" alt="Nail Design 8">
+        </div>
+        <div class="portfolio-item">
+            <img src="assets/images/nails/nail9.jpeg" alt="Nail Design 9">
+        </div>
+        <div class="portfolio-item">
+            <img src="assets/images/nails/nail10.jpeg" alt="Nail Design 9">
+        </div>
+    </div>
+</section>
 
     <!-- Contact Section -->
     <section id="contact">
@@ -80,5 +115,7 @@
             <a href="https://www.facebook.com/">Facebook</a>
         </div>
     </footer>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
