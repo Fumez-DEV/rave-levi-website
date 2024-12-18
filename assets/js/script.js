@@ -9,6 +9,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Add a simple fade-in animation when the About Section is scrolled into view
+document.addEventListener('DOMContentLoaded', () => {
+    const aboutSection = document.querySelector('#about');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                aboutSection.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.5 });
+
+    observer.observe(aboutSection);
+});
+
 // Lightbox Portfolio Feature
 document.addEventListener('DOMContentLoaded', () => {
     const portfolioImages = document.querySelectorAll('.portfolio-gallery img');
@@ -42,65 +56,61 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const dateInput = document.getElementById("date");
-    const timeSlotsContainer = document.querySelector(".time-slots");
-    const confirmation = document.getElementById("confirmation");
-    const confirmDate = document.getElementById("confirm-date");
-    const confirmTime = document.getElementById("confirm-time");
 
-    // Set the minimum date to today
-    const today = new Date();
-    dateInput.min = today.toISOString().split("T")[0];
+// Add scroll-based animation for the Services Section
+document.addEventListener('DOMContentLoaded', () => {
+    const servicesSection = document.querySelector('#services');
+    const serviceItems = document.querySelectorAll('.service-item');
 
-    // Generate time slots for a selected date
-    const generateTimeSlots = () => {
-        const timeSlots = [
-            "09:00", "09:30", "10:00", "10:30", 
-            "11:00", "11:30", "12:00", "12:30",
-            "13:00", "13:30", "14:00", "14:30"
-        ];
-        
-        // Clear previous slots
-        timeSlotsContainer.innerHTML = "";
-
-        timeSlots.forEach(time => {
-            const slot = document.createElement("div");
-            slot.classList.add("time-slot");
-            slot.textContent = time;
-
-            // Add click event to book slot
-            slot.addEventListener("click", () => {
-                bookSlot(time);
-            });
-
-            timeSlotsContainer.appendChild(slot);
-        });
+    const observerOptions = {
+        threshold: 0.2, // Trigger when 20% of the element is visible
     };
 
-    // Book a slot
-    const bookSlot = (time) => {
-        const selectedDate = dateInput.value;
-        if (!selectedDate) {
-            alert("אנא בחרי תאריך קודם.");
-            return;
-        }
-
-        // Update confirmation message
-        confirmation.style.display = "block";
-        confirmDate.textContent = selectedDate;
-        confirmTime.textContent = time;
-
-        // Mark slot as booked
-        const slots = document.querySelectorAll(".time-slot");
-        slots.forEach(slot => {
-            if (slot.textContent === time) {
-                slot.classList.add("booked");
-                slot.textContent = `נבחר`;
+    const observerCallback = (entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
             }
         });
     };
 
-    // Event Listener: Update time slots when date is selected
-    dateInput.addEventListener("change", generateTimeSlots);
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    // Observe the section and individual service items
+    observer.observe(servicesSection);
+    serviceItems.forEach((item) => observer.observe(item));
 });
+
+
+// JavaScript for hover effect
+document.addEventListener("DOMContentLoaded", () => {
+    const serviceItems = document.querySelectorAll('.service-item');
+
+    serviceItems.forEach((item) => {
+        item.addEventListener('mouseover', () => {
+            item.style.backgroundColor = '#ffe5e9';
+            item.style.color = '#333';
+        });
+
+        item.addEventListener('mouseout', () => {
+            item.style.backgroundColor = '#fff';
+            item.style.color = '#555';
+        });
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const icons = document.querySelectorAll('.contact-icon');
+
+    icons.forEach((icon) => {
+        icon.addEventListener('mouseover', () => {
+            icon.style.transform = 'scale(1.1)';
+            icon.style.transition = 'transform 0.3s ease';
+        });
+
+        icon.addEventListener('mouseout', () => {
+            icon.style.transform = 'scale(1)';
+        });
+    });
+});
+
