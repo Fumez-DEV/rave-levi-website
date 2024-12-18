@@ -7,26 +7,32 @@
     <title>רווה לוי ניילס - תל אביב והסביבה</title>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Noto+Sans+Hebrew:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <!--link rel="stylesheet" href="assets/css/responsive.css"-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
 <!-- Header Section -->
 <header>
     <nav aria-label="Main Navigation">
+        <!-- Logo -->
         <div class="logo" aria-label="רווה לוי ניילס - דף הבית">
             <a href="#hero">
                 <img src="assets/images/rl-nails-logo.JPEG" alt="Rave Levi Logo">
             </a>
         </div>
-        <button class="menu-toggle" aria-label="פתח תפריט">☰</button>
+
+        <!-- Navigation Links -->
         <ul class="nav-links">
-            <li><a href="#about" aria-label="מעבר לאודות">אודות</a></li>
-            <li><a href="#services" aria-label="מעבר לשירותים">שירותים</a></li>
-            <li><a href="#portfolio" aria-label="מעבר לגלריה">גלריה</a></li>
-            <li><a href="#contact" aria-label="מעבר ליצירת קשר">יצירת קשר</a></li>
+            <li><a href="#about" aria-label="מעבר לאודות"><i class="fa-solid fa-info-circle"></i> אודות</a></li>
+            <li><a href="#services" aria-label="מעבר לשירותים"><i class="fa-solid fa-hand-sparkles"></i> שירותים</a></li>
+            <li><a href="#portfolio" aria-label="מעבר לגלריה"><i class="fa-solid fa-images"></i> גלריה</a></li>
+            <li><a href="#contact" aria-label="מעבר ליצירת קשר"><i class="fa-solid fa-envelope"></i> יצירת קשר</a></li>
         </ul>
-        <a href="https://wa.me/" class="cta" aria-label="קביעת תור בוואטסאפ">קביעת תור בוואטסאפ</a>
+
+        <!-- Call-to-Action Button -->
+        <a href="https://wa.me/0549262956" class="cta" aria-label="קביעת תור בוואטסאפ">
+            <i class="fa-brands fa-whatsapp"></i> קביעת תור בוואטסאפ
+        </a>
     </nav>
 </header>
 
@@ -66,55 +72,62 @@
 <section id="portfolio">
     <h2>העבודות שלנו</h2>
     <div class="portfolio-gallery">
-        <div class="portfolio-item">
-            <img src="assets/images/nails/nail1.jpeg" alt="Nail Design 1">
-        </div>
-        <div class="portfolio-item">
-            <img src="assets/images/nails/nail2.jpeg" alt="Nail Design 2">
-        </div>
-        <div class="portfolio-item">
-            <img src="assets/images/nails/nail3.jpeg" alt="Nail Design 3">
-        </div>
-        <div class="portfolio-item">
-            <img src="assets/images/nails/nail4.jpeg" alt="Nail Design 4">
-        </div>
-        <div class="portfolio-item">
-            <img src="assets/images/nails/nail5.jpeg" alt="Nail Design 5">
-        </div>
-        <div class="portfolio-item">
-            <img src="assets/images/nails/nail6.jpeg" alt="Nail Design 6">
-        </div>
-        <div class="portfolio-item">
-            <img src="assets/images/nails/nail7.jpeg" alt="Nail Design 7">
-        </div>
-        <div class="portfolio-item">
-            <img src="assets/images/nails/nail8.jpeg" alt="Nail Design 8">
-        </div>
-        <div class="portfolio-item">
-            <img src="assets/images/nails/nail9.jpeg" alt="Nail Design 9">
-        </div>
-        <div class="portfolio-item">
-            <img src="assets/images/nails/nail10.jpeg" alt="Nail Design 9">
-        </div>
+        <!-- Row 1 -->
+        <div class="portfolio-item"><img src="assets/images/nails/nail1.jpeg" alt="Nail Design 1"></div>
+        <div class="portfolio-item"><img src="assets/images/nails/nail2.jpeg" alt="Nail Design 2"></div>
+        <div class="portfolio-item"><img src="assets/images/nails/nail3.jpeg" alt="Nail Design 3"></div>
+        <div class="portfolio-item"><img src="assets/images/nails/nail4.jpeg" alt="Nail Design 4"></div>
+        <div class="portfolio-item"><img src="assets/images/nails/nail5.jpeg" alt="Nail Design 5"></div>
+        <!-- Row 2 -->
+        <div class="portfolio-item"><img src="assets/images/nails/nail6.jpeg" alt="Nail Design 6"></div>
+        <div class="portfolio-item"><img src="assets/images/nails/nail7.jpeg" alt="Nail Design 7"></div>
+        <div class="portfolio-item"><img src="assets/images/nails/nail8.jpeg" alt="Nail Design 8"></div>
+        <div class="portfolio-item"><img src="assets/images/nails/nail9.jpeg" alt="Nail Design 9"></div>
+        <div class="portfolio-item"><img src="assets/images/nails/nail10.jpeg" alt="Nail Design 10"></div>
     </div>
 </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>יצירת קשר</h2>
-        <p>לשליחת הודעה מהירה לחצו על הכפתור מטה:</p>
-        <a href="https://wa.me/" class="contact-btn">שלחי הודעה עכשיו</a>
-        <p>או התקשרי אלינו בטלפון: <a href="tel:+972123456789">+972-123-456-789</a></p>
-    </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>כל הזכויות שמורות &copy; 2024 רווה לוי ניילס</p>
-        <div class="social-icons">
-            <a href="https://www.instagram.com/">Instagram</a>
-            <a href="https://www.facebook.com/">Facebook</a>
+<!-- Contact Section -->
+<section id="contact">
+    <h2>יצירת קשר</h2>
+    <p>לשליחת הודעה מהירה לחצו על הכפתור מטה:</p>
+    <a href="https://wa.me/0549262956" class="contact-btn">שלחי הודעה עכשיו</a>
+    <p>או התקשרי אלינו בטלפון: <a href="tel:+972549262956">054-926-2956</a></p>
+</section>
+
+<!-- Footer Section -->
+<footer>
+    <div class="footer-container">
+        <!-- Footer Logo -->
+        <div class="footer-logo">
+            <img src="assets/images/rl-nails-logo.JPEG" alt="Rave Levi Logo">
         </div>
-    </footer>
+        <!-- Footer Navigation Links -->
+        <ul class="footer-nav">
+            <li><a href="#about">אודות</a></li>
+            <li><a href="#services">שירותים</a></li>
+            <li><a href="#portfolio">גלריה</a></li>
+            <li><a href="#contact">יצירת קשר</a></li>
+        </ul>
+        <!-- Footer Social Icons -->
+        <div class="footer-social">
+            <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://wa.me/0549262956" target="_blank" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </div>
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 רווה לוי ניילס. כל הזכויות שמורות.</p>
+    </div>
+</footer>
 
     <script src="assets/js/script.js"></script>
 </body>
