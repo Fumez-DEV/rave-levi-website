@@ -68,46 +68,6 @@ header .logo img:hover {
     transform: scale(1.1);
 }
 
-/* Navigation Links */
-header .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    margin: 0;
-    padding: 0;
-}
-
-header .nav-links li {
-    position: relative;
-}
-
-header .nav-links a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: color 0.3s ease, transform 0.2s ease;
-}
-
-header .nav-links a:hover {
-    color: #ff6b6b;
-    transform: scale(1.1);
-}
-
-/* Add Underline Hover Effect */
-header .nav-links a::after {
-    content: '';
-    display: block;
-    height: 2px;
-    background: #ff6b6b;
-    width: 0;
-    transition: width 0.3s ease;
-    margin-top: 5px;
-}
-
-header .nav-links a:hover::after {
-    width: 100%;
-}
 
 /* Call-to-Action Button (CTA) */
 header .cta {
@@ -127,20 +87,41 @@ header .cta:hover {
     transform: translateY(-2px);
 }
 
+/* Desktop Specific Styling */
+@media (min-width: 769px) {
+    header nav {
+        display: flex;
+    }
+
+    .nav-links {
+        display: flex;
+    }
+
+    .cta {
+        display: inline-block;
+    }
+}
+
 /* Mobile Optimization */
 @media (max-width: 768px) {
     header nav {
         padding: 1rem;
+        display: flex;
+        justify-content: space-between; /* Only logo and CTA are visible */
     }
 
-    header .logo img {
-        max-height: 50px; /* Slightly reduce logo size on mobile */
-        width: 50px;
+    .nav-links {
+        display: block; /* Hide navigation links on mobile */
     }
 
-    header .cta {
+    .cta {
         padding: 0.5rem 1rem;
         font-size: 0.9rem;
+    }
+
+    .logo img {
+        max-height: 50px; /* Slightly reduce logo size on mobile */
+        width: 50px;
     }
 }
 
@@ -148,8 +129,9 @@ header .cta:hover {
 #hero {
     text-align: center;
     padding: 6rem 2rem;
-    background: linear-gradient(180deg, #ffe5e9 0%, #ffccd5 100%);
-    color: #333;
+    background: url('../images/hero-bg.jpg') no-repeat center center / cover;
+    background-attachment: fixed; /* Enable parallax effect */
+    color: #fff; /* Adjust text color for better contrast */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -157,17 +139,36 @@ header .cta:hover {
     min-height: 87vh;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     animation: fadeIn 1.5s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Add an overlay for better text readability */
+#hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent black overlay */
+    z-index: 1;
+}
+
+#hero .hero-content {
+    position: relative;
+    z-index: 2; /* Ensure content is above the overlay */
 }
 
 /* Hero Heading */
 #hero h1 {
     font-size: 4rem;
     margin-bottom: 1rem;
-    color: #333;
+    color: #fff;
     font-weight: 800;
     letter-spacing: -1px;
     line-height: 1.2;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* Enhance contrast */
     animation: slideDown 1.2s ease-out;
 }
 
@@ -175,7 +176,7 @@ header .cta:hover {
 #hero p {
     font-size: 1.3rem;
     margin-bottom: 2rem;
-    color: #555;
+    color: #f8f8f8;
     line-height: 1.6;
     max-width: 700px;
     margin-left: auto;
@@ -204,43 +205,12 @@ header .cta:hover {
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
 
-/* Keyframe Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideDown {
-    from {
-        transform: translateY(-30px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes slideUp {
-    from {
-        transform: translateY(30px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Responsive Styles for Full Mobile Optimization */
+/* Disable parallax on mobile for performance */
 @media (max-width: 768px) {
     #hero {
         padding: 3rem 1.5rem;
         min-height: 50vh; /* Reduce height on smaller devices */
+        background-attachment: scroll; /* Disable parallax for mobile */
     }
 
     #hero h1 {
@@ -552,6 +522,14 @@ header .cta:hover {
     padding: 2rem 1rem;
     background: #fff;
     text-align: center;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(30px); /* Slide-in effect */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#portfolio.visible {
+    opacity: 1; /* Fade-in effect */
+    transform: translateY(0); /* Reset slide-in */
 }
 
 #portfolio h2 {
@@ -559,6 +537,7 @@ header .cta:hover {
     margin-bottom: 1.5rem;
     color: #333;
     font-weight: bold;
+    animation: fadeIn 1s ease-in-out; /* Text fade-in animation */
 }
 
 /* Portfolio Gallery */
@@ -579,7 +558,14 @@ header .cta:hover {
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
+    opacity: 0; /* Initially hidden */
+    transform: translateY(30px); /* Slide-in effect */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.portfolio-item.visible {
+    opacity: 1; /* Fade-in effect */
+    transform: translateY(0); /* Reset slide-in */
 }
 
 .portfolio-item:hover {
@@ -619,6 +605,18 @@ header .cta:hover {
     max-height: 90%;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Responsive Styles */
@@ -664,6 +662,145 @@ header .cta:hover {
     }
 }
 
+
+/* Pricing Section */
+#pricing {
+    padding: 4rem 2rem;
+    background: linear-gradient(180deg, #fff, #ffe5e9);
+    text-align: center;
+    color: #333;
+    font-family: 'Assistant', sans-serif;
+}
+
+#pricing h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+#pricing p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Pricing Container */
+.pricing-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+    gap: 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Pricing Item */
+.pricing-item {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.pricing-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Price */
+.pricing-item .price {
+    font-size: 2rem;
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+.pricing-item .special {
+    display: inline-block;
+    font-size: 1rem;
+    color: #e63946;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* Pricing Footer */
+.pricing-footer {
+    margin-top: 2rem;
+}
+
+.pricing-btn {
+    display: inline-block;
+    background: #ff6b6b;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.pricing-btn:hover {
+    background: #e63946;
+    transform: translateY(-3px);
+}
+
+.pricing-footer .warning {
+    font-size: 0.9rem;
+    color: #e63946;
+    margin-top: 1rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .pricing-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablets */
+    }
+
+    #pricing h2 {
+        font-size: 2rem;
+    }
+
+    #pricing p {
+        font-size: 1rem;
+    }
+
+    .pricing-item .price {
+        font-size: 1.8rem;
+    }
+
+    .pricing-btn {
+        padding: 0.7rem 1.2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-container {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+    }
+
+    #pricing h2 {
+        font-size: 1.8rem;
+    }
+
+    #pricing p {
+        font-size: 0.9rem;
+    }
+
+    .pricing-item .price {
+        font-size: 1.6rem;
+    }
+
+    .pricing-btn {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
 /* Contact Section */
 #contact {
     padding: 4rem 2rem;
@@ -671,6 +808,14 @@ header .cta:hover {
     text-align: center;
     color: #333;
     font-family: 'Assistant', sans-serif;
+    opacity: 0; /* Initial state for animation */
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#contact.visible {
+    opacity: 1; /* Fade-in effect */
+    transform: translateY(0);
 }
 
 /* Section Title */
@@ -692,7 +837,7 @@ header .cta:hover {
 /* Contact Container */
 .contact-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1.5rem;
     margin: 0 auto;
     max-width: 1000px;
@@ -705,12 +850,19 @@ header .cta:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 2rem 1rem;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0; /* Initial state for animation */
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.contact-item.visible {
+    opacity: 1; /* Fade-in effect */
+    transform: translateY(0);
 }
 
 .contact-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Contact Icon */
@@ -718,11 +870,14 @@ header .cta:hover {
     font-size: 2.5rem;
     color: #ff6b6b;
     margin-bottom: 1rem;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.3s ease;
+    animation: pulse 1.5s infinite;
 }
 
 .contact-item:hover .contact-icon {
     color: #e63946;
+    transform: scale(1.2);
+    animation: none; /* Stop pulse animation on hover */
 }
 
 /* Contact Title */
@@ -770,51 +925,53 @@ header .cta:hover {
 
 .contact-btn:hover {
     background: #e63946;
-    transform: translateY(-3px);
+    transform: translateY(-5px);
+}
+
+/* Keyframes for Icon Animation */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 /* Mobile Optimization */
 @media (max-width: 768px) {
-    /* Section Title */
     #contact h2 {
         font-size: 2rem;
         margin-bottom: 1rem;
     }
 
-    /* Section Description */
     #contact p {
         font-size: 1rem;
         margin-bottom: 1.5rem;
     }
 
-    /* Grid Layout */
     .contact-container {
-        grid-template-columns: 1fr; /* Single column on smaller screens */
-        gap: 1rem; /* Reduce gap for better spacing */
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
-    /* Individual Contact Item */
     .contact-item {
         padding: 1.5rem 1rem;
     }
 
-    /* Icon Size */
     .contact-icon {
         font-size: 2rem;
         margin-bottom: 0.8rem;
     }
 
-    /* Contact Title */
     .contact-item h3 {
         font-size: 1.2rem;
     }
 
-    /* Contact Links */
     .contact-item a {
         font-size: 0.9rem;
     }
 
-    /* Contact Button */
     .contact-btn {
         padding: 0.7rem 1.2rem;
         font-size: 1rem;
@@ -822,23 +979,19 @@ header .cta:hover {
 }
 
 @media (max-width: 480px) {
-    /* Section Title */
     #contact h2 {
         font-size: 1.8rem;
     }
 
-    /* Section Description */
     #contact p {
         font-size: 0.9rem;
     }
 
-    /* Contact Button */
     .contact-btn {
         padding: 0.6rem 1rem;
         font-size: 0.9rem;
     }
 
-    /* Icon Size */
     .contact-icon {
         font-size: 1.8rem;
     }
