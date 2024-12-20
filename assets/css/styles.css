@@ -20,6 +20,7 @@ body {
     line-height: 1.6;
 }
 
+
 h1, h2, h3 {
     font-family: 'Assistant', sans-serif;
     margin-bottom: 1rem;
@@ -129,7 +130,7 @@ header .cta:hover {
 #hero {
     text-align: center;
     padding: 6rem 2rem;
-    background: url('../images/hero-bg.jpg') no-repeat center center / cover;
+    background: url('../images/hero-bg2.jpg') no-repeat center center / cover;
     background-attachment: fixed; /* Enable parallax effect */
     color: #fff; /* Adjust text color for better contrast */
     display: flex;
@@ -267,9 +268,9 @@ header .cta:hover {
 }
 
 #about h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 1.5rem;
-    color: #ff6b6b;
+    color: #333;
     font-weight: bold;
 }
 
@@ -358,7 +359,7 @@ header .cta:hover {
 #services {
     text-align: center;
     padding: 3rem 1rem;
-    background: linear-gradient(180deg, #fff, #ffe5e9);
+    background: #fff;
     color: #333;
     font-family: 'Assistant', sans-serif;
     opacity: 0; /* Initially hidden */
@@ -374,7 +375,7 @@ header .cta:hover {
 #services h2 {
     font-size: 2.8rem;
     margin-bottom: 2rem;
-    color: #ff6b6b;
+    color: #333;
     font-weight: bold;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     letter-spacing: 1px;
@@ -533,7 +534,7 @@ header .cta:hover {
 }
 
 #portfolio h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 1.5rem;
     color: #333;
     font-weight: bold;
@@ -670,13 +671,15 @@ header .cta:hover {
     text-align: center;
     color: #333;
     font-family: 'Assistant', sans-serif;
+    overflow: hidden; /* Prevent content overflow during animations */
 }
 
 #pricing h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 1rem;
-    color: #ff6b6b;
+    color: #333;
     font-weight: bold;
+    animation: fadeInDown 1s ease-in-out; /* Title animation */
 }
 
 #pricing p {
@@ -684,6 +687,7 @@ header .cta:hover {
     margin-bottom: 2rem;
     color: #555;
     line-height: 1.6;
+    animation: fadeIn 1.2s ease-in-out; /* Description animation */
 }
 
 /* Pricing Container */
@@ -693,6 +697,7 @@ header .cta:hover {
     gap: 2rem;
     margin: 0 auto;
     max-width: 1200px;
+    animation: fadeInUp 1.5s ease-in-out; /* Grid animation */
 }
 
 /* Pricing Item */
@@ -703,6 +708,9 @@ header .cta:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideInUp 0.8s ease-in-out forwards;
 }
 
 .pricing-item:hover {
@@ -741,6 +749,7 @@ header .cta:hover {
     border-radius: 30px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background 0.3s ease, transform 0.2s ease;
+    animation: bounce 2s infinite; /* Button animation */
 }
 
 .pricing-btn:hover {
@@ -752,6 +761,49 @@ header .cta:hover {
     font-size: 0.9rem;
     color: #e63946;
     margin-top: 1rem;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
 }
 
 /* Responsive Styles */
@@ -820,7 +872,7 @@ header .cta:hover {
 
 /* Section Title */
 #contact h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 1rem;
     color: #333;
     font-weight: bold;
@@ -999,7 +1051,7 @@ header .cta:hover {
 
 /* Footer Section */
 footer {
-    background: #ffe5e9;
+    background: #ffccd5; /* Updated background color */
     color: #333;
     padding: 2rem 1rem;
     font-family: 'Noto Sans Hebrew', 'Assistant', sans-serif;
@@ -1054,7 +1106,30 @@ footer {
     transform: scale(1.1);
 }
 
-/* Social Media Icons */
+/* Legal Links */
+.footer-legal {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    margin: 0;
+    border-top: 1px solid #ddd;
+}
+
+.footer-legal li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-legal li a:hover {
+    color: #ff6b6b;
+    transform: scale(1.1);
+}
+
+/* Footer Social Icons */
 .footer-social {
     display: flex;
     gap: 1rem;
@@ -1078,6 +1153,26 @@ footer {
     font-size: 0.9rem;
     color: #555;
     text-align: center;
+}
+
+.footer-bottom a {
+    color: #ff6b6b;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-bottom a:hover {
+    color: #e63946;
+    text-decoration: underline;
+}
+
+/* Responsive Legal Links */
+@media (max-width: 768px) {
+    .footer-legal {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
 }
 
 /* Responsive Footer */

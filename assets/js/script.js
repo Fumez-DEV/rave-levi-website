@@ -75,3 +75,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+// Fade-in Animation for Pricing Items on Scroll
+document.addEventListener('DOMContentLoaded', () => {
+    const pricingItems = document.querySelectorAll('.pricing-item');
+
+    const observerOptions = { threshold: 0.2 }; // Trigger when 20% is visible
+
+    const observerCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible'); // Add visibility class
+                observer.unobserve(entry.target); // Stop observing once visible
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    pricingItems.forEach(item => observer.observe(item));
+});
