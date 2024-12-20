@@ -623,12 +623,11 @@ header .cta:hover {
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .portfolio-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: none; /* Remove hover scaling */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Optional hover shadow */
 }
 
 .portfolio-item img {
@@ -636,11 +635,6 @@ header .cta:hover {
     height: auto;
     display: block;
     border-radius: 10px;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.portfolio-item:hover img {
-    opacity: 0.9;
 }
 
 /* Responsive Styles */

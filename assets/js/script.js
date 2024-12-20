@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    observeElements(['#about', '#services', '#contact', '#portfolio']);
+    observeElements(['#about', '#services', '#contact']);
 
     // Lightbox for Portfolio Images
     document.querySelectorAll('.portfolio-gallery img').forEach(image => {
