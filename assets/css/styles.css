@@ -130,8 +130,7 @@ header .cta:hover {
 #hero {
     text-align: center;
     padding: 6rem 2rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                url('../images/hero-bg2.jpg') no-repeat center center / cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/hero-bg2.jpg') no-repeat center center / cover;
     background-attachment: fixed; /* Enable parallax effect */
     color: #fff; /* Adjust text color for better contrast */
     display: flex;
@@ -1308,4 +1307,39 @@ footer {
     .footer-bottom {
         font-size: 0.8rem;
     }
+}
+
+
+/* For Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+    height: 10px; /* Height of the scrollbar for horizontal scrolling */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Background of the scrollbar track */
+    border-radius: 5px; /* Optional: Make the track rounded */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff6b6b; /* Color of the scrollbar thumb */
+    border-radius: 5px; /* Optional: Make the thumb rounded */
+    border: 2px solid #f1f1f1; /* Optional: Adds space around thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e63946; /* Color when the thumb is hovered */
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin; /* Thin scrollbar */
+    scrollbar-color: #ff6b6b #f1f1f1; /* Thumb color and track color */
+}
+
+/* Optional: Style specific scrollable elements */
+.scrollable-container {
+    overflow-y: scroll; /* Ensure the container is scrollable */
+    scrollbar-width: thin; /* Thin scrollbar for this element */
+    scrollbar-color: #ff6b6b #f1f1f1; /* Thumb and track colors */
 }
