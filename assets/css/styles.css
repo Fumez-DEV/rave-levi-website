@@ -622,7 +622,7 @@ header .cta:hover {
     gap: 1.5rem;
     justify-content: center; /* Center the grid */
     align-items: center;
-    max-width: 1200px; /* Optional max-width for centering */
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
 }
