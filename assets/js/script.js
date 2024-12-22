@@ -72,21 +72,3 @@ document.addEventListener('DOMContentLoaded', () => {
     applyHoverEffect('.service-item', { backgroundColor: '#ffe5e9', color: '#333' }, { backgroundColor: '#fff', color: '#555' });
     applyHoverEffect('.contact-icon', { transform: 'scale(1.1)', transition: 'transform 0.3s ease' }, { transform: 'scale(1)' });
 });
-
-document.addEventListener('DOMContentLoaded', () => {
-    // Show the popup after 5 seconds
-    setTimeout(() => {
-        const popup = document.getElementById('popup-alert');
-        if (popup) {
-            popup.style.display = 'flex';
-        }
-    }, 5000);
-
-    // Automatically close the popup after 10 seconds
-    setTimeout(() => {
-        const popup = document.getElementById('popup-alert');
-        if (popup) {
-            popup.style.display = 'none';
-        }
-    }, 10000);
-});

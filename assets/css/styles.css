@@ -1,3 +1,15 @@
+@keyframes scaleUp {
+    0% {
+        transform: scale(.8);
+        opacity: 0
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1
+    }
+}
+
 @keyframes fadeInDown {
     0% {
         opacity: 0;
@@ -54,26 +66,6 @@
     }
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-@keyframes scaleUp {
-    0% {
-        transform: scale(.8)
-    }
-
-    to {
-        transform: scale(1)
-    }
-}
-
 *,body {
     margin: 0;
     padding: 0
@@ -96,13 +88,10 @@
     margin-right: auto
 }
 
-header,header nav {
-    justify-content: space-between
-}
-
 header nav {
     margin: 0 auto;
     max-width: 1200px;
+    justify-content: space-between;
     padding: 1rem 2rem
 }
 
@@ -149,18 +138,19 @@ h1,h2,h3 {
 }
 
 header {
-    background: linear-gradient(90deg,#edb7c5,#edb7c5);
-    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+    background: linear-gradient(90deg, #edb7c5, #edb7c5); /* Updated gradient */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: .5rem 1rem;
-    width: 100%
+    justify-content: space-between; /* Ensure proper spacing */
+    padding: 0.5rem 1rem; /* Adjusted padding for better fit */
+    width: 100%;
 }
 
-header .logo a,header nav {
+header .logo a, header nav {
     display: flex;
-    align-items: center
+    align-items: center;
 }
 
 header .logo img {
@@ -168,30 +158,30 @@ header .logo img {
     width: 60px;
     object-fit: cover;
     border-radius: 50%;
-    transition: transform .3s
+    transition: transform 0.3s;
 }
 
 header .logo img:hover {
-    transform: scale(1.1)
+    transform: scale(1.1);
 }
 
 header .cta {
-    background: #fff;
-    color: #ce7495;
-    padding: .6rem 1.5rem;
-    border-radius: 30px;
+    background: #ffffff; /* White background for the CTA button */
+    color: #ce7495; /* Complementary text color matching the header */
+    padding: 0.6rem 1.5rem; /* Slightly wider padding for a polished look */
+    border-radius: 30px; /* Increased border-radius for a pill-shaped button */
     font-weight: 600;
     font-size: 1rem;
-    border: 2px solid #ce7495;
-    box-shadow: 0 4px 10px rgba(0,0,0,.1);
-    transition: all .3s ease
+    border: 2px solid #ce7495; /* Subtle border for definition */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
 header .cta:hover {
-    background: #ce7495;
-    color: #fff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0,0,0,.2)
+    background: #ce7495; /* Invert colors on hover */
+    color: #ffffff; /* White text for contrast */
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
 @media (min-width:769px) {
@@ -313,10 +303,6 @@ header .cta:hover {
     color: #333
 }
 
-.certificates h3 {
-    font-size: 2rem
-}
-
 #about p {
     font-size: 1.2rem;
     line-height: 1.6;
@@ -336,6 +322,10 @@ header .cta:hover {
 
 .certificates {
     margin-top: 3rem
+}
+
+.certificates h3 {
+    font-size: 2rem
 }
 
 .certificates-gallery {
@@ -806,32 +796,6 @@ header .cta:hover {
     transform: translateY(-5px)
 }
 
-.popup {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,.5);
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-    animation: fadeIn .5s ease
-}
-
-.popup-content {
-    background: #fff;
-    padding: 1.5rem 2rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0,0,0,.2);
-    max-width: 90%;
-    animation: scaleUp .5s ease;
-    font-family: "Noto Sans Hebrew",sans-serif;
-    color: #333;
-    font-size: 1.2rem
-}
 
 footer {
     background: #ffccd5;
