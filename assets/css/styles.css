@@ -202,7 +202,7 @@ header .cta:hover {
 
 #hero {
     padding: 6rem 2rem;
-    background: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)) fixed,url(../images/hero-bg2.jpg)center center/cover no-repeat fixed;
+    background: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)) fixed,url(../images/hero-bg2.webp)center center/cover no-repeat fixed;
     color: #fff;
     display: flex;
     flex-direction: column;
