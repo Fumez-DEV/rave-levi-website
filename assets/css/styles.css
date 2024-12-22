@@ -138,17 +138,19 @@ h1,h2,h3 {
 }
 
 header {
-    background: linear-gradient(90deg,#ffccd5,#ffc3a0);
-    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+    background: linear-gradient(90deg, #edb7c5, #edb7c5); /* Updated gradient */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
-    width: 100%
+    justify-content: space-between; /* Ensure proper spacing */
+    padding: 0.5rem 1rem; /* Adjusted padding for better fit */
+    width: 100%;
 }
 
-header .logo a,header nav {
+header .logo a, header nav {
     display: flex;
-    align-items: center
+    align-items: center;
 }
 
 header .logo img {
@@ -156,26 +158,30 @@ header .logo img {
     width: 60px;
     object-fit: cover;
     border-radius: 50%;
-    transition: transform .3s
+    transition: transform 0.3s;
 }
 
 header .logo img:hover {
-    transform: scale(1.1)
+    transform: scale(1.1);
 }
 
 header .cta {
-    color: #fff;
-    padding: .6rem 1.2rem;
-    border-radius: 25px;
+    background: #ffffff; /* White background for the CTA button */
+    color: #ce7495; /* Complementary text color matching the header */
+    padding: 0.6rem 1.5rem; /* Slightly wider padding for a polished look */
+    border-radius: 30px; /* Increased border-radius for a pill-shaped button */
     font-weight: 600;
-    box-shadow: 0 4px 6px rgba(0,0,0,.1);
-    transition: background .3s,transform .2s;
-    font-size: 1rem
+    font-size: 1rem;
+    border: 2px solid #ce7495; /* Subtle border for definition */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
 header .cta:hover {
-    background: #e63946;
-    transform: translateY(-2px)
+    background: #ce7495; /* Invert colors on hover */
+    color: #ffffff; /* White text for contrast */
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
 @media (min-width:769px) {
