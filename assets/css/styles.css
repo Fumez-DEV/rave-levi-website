@@ -535,35 +535,35 @@ header .cta:hover {
 
 #portfolio {
     padding: 2rem 1rem;
-    overflow: visible;
+    overflow: visible
 }
 
 #portfolio h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    color: #333;
+    color: #333
 }
 
 .portfolio-gallery {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5,1fr);
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 0 1rem
 }
 
 .portfolio-item {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+    transition: transform .3s ease,box-shadow .3s ease
 }
 
 .portfolio-item:hover {
-    transform: scale(1.05); /* Scale the entire item slightly */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a stronger shadow */
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,.2)
 }
 
 .portfolio-item img {
@@ -571,12 +571,12 @@ header .cta:hover {
     height: auto;
     display: block;
     border-radius: 10px;
-    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth effect */
+    transition: transform .3s ease,opacity .3s ease
 }
 
 .portfolio-item:hover img {
-    transform: scale(1.1); /* Scale the image slightly */
-    opacity: 0.9; /* Add a subtle opacity effect */
+    transform: scale(1.1);
+    opacity: .9
 }
 
 .lightbox {
@@ -711,9 +711,144 @@ header .cta:hover {
     margin-top: 1rem
 }
 
-.contact-item,footer {
+#before-after,.contact-item,footer {
     padding: 2rem 1rem;
     text-align: center
+}
+
+#before-after {
+    padding: 3rem 1rem;
+    background-color: #f8f8f8
+}
+
+#before-after h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+    text-shadow: 0 2px 4px rgba(0,0,0,.1)
+}
+
+#before-after p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #555;
+    line-height: 1.6
+}
+
+.before-after-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto
+}
+
+.gallery-image img,.gallery-item {
+    border-radius: 10px;
+    transition: transform .3s ease,box-shadow .3s ease
+}
+
+.gallery-item {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0,0,0,.1)
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,.2)
+}
+
+.gallery-image {
+    flex: 1;
+    text-align: center
+}
+
+.gallery-image h3 {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+    color: #ff6b6b
+}
+
+.gallery-image img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 3px 6px rgba(0,0,0,.1)
+}
+
+.gallery-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,.2)
+}
+
+@media (max-width:768px) {
+    #before-after {
+        padding: 2rem 1rem
+    }
+
+    #before-after h2 {
+        font-size: 2rem;
+        margin-bottom: .8rem
+    }
+
+    #before-after p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem
+    }
+
+    .before-after-gallery {
+        gap: 1.5rem
+    }
+
+    .gallery-item {
+        flex-direction: column;
+        padding: 1rem
+    }
+
+    .gallery-image {
+        margin-bottom: 1rem
+    }
+
+    .gallery-image h3 {
+        font-size: 1.2rem
+    }
+
+    .gallery-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px
+    }
+}
+
+@media (max-width:480px) {
+    #before-after h2 {
+        font-size: 1.8rem
+    }
+
+    #before-after p {
+        font-size: .9rem
+    }
+
+    .before-after-gallery {
+        gap: 1rem
+    }
+
+    .gallery-item {
+        padding: .8rem
+    }
+
+    .gallery-image h3 {
+        font-size: 1rem;
+        margin-bottom: .5rem
+    }
+
+    .gallery-image img {
+        border-radius: 6px
+    }
 }
 
 #contact {
