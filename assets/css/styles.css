@@ -88,10 +88,13 @@
     margin-right: auto
 }
 
+header,header nav {
+    justify-content: space-between
+}
+
 header nav {
     margin: 0 auto;
     max-width: 1200px;
-    justify-content: space-between;
     padding: 1rem 2rem
 }
 
@@ -138,19 +141,18 @@ h1,h2,h3 {
 }
 
 header {
-    background: linear-gradient(90deg, #edb7c5, #edb7c5); /* Updated gradient */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(90deg,#edb7c5,#edb7c5);
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
     position: sticky;
     top: 0;
     z-index: 1000;
-    justify-content: space-between; /* Ensure proper spacing */
-    padding: 0.5rem 1rem; /* Adjusted padding for better fit */
-    width: 100%;
+    padding: .5rem 1rem;
+    width: 100%
 }
 
-header .logo a, header nav {
+header .logo a,header nav {
     display: flex;
-    align-items: center;
+    align-items: center
 }
 
 header .logo img {
@@ -158,30 +160,30 @@ header .logo img {
     width: 60px;
     object-fit: cover;
     border-radius: 50%;
-    transition: transform 0.3s;
+    transition: transform .3s
 }
 
 header .logo img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1)
 }
 
 header .cta {
-    background: #ffffff; /* White background for the CTA button */
-    color: #ce7495; /* Complementary text color matching the header */
-    padding: 0.6rem 1.5rem; /* Slightly wider padding for a polished look */
-    border-radius: 30px; /* Increased border-radius for a pill-shaped button */
+    background: #fff;
+    color: #ce7495;
+    padding: .6rem 1.5rem;
+    border-radius: 30px;
     font-weight: 600;
     font-size: 1rem;
-    border: 2px solid #ce7495; /* Subtle border for definition */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    border: 2px solid #ce7495;
+    box-shadow: 0 4px 10px rgba(0,0,0,.1);
+    transition: all .3s ease
 }
 
 header .cta:hover {
-    background: #ce7495; /* Invert colors on hover */
-    color: #ffffff; /* White text for contrast */
-    transform: translateY(-2px); /* Lift effect */
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    background: #ce7495;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,.2)
 }
 
 @media (min-width:769px) {
@@ -303,6 +305,10 @@ header .cta:hover {
     color: #333
 }
 
+.certificates h3 {
+    font-size: 2rem
+}
+
 #about p {
     font-size: 1.2rem;
     line-height: 1.6;
@@ -322,10 +328,6 @@ header .cta:hover {
 
 .certificates {
     margin-top: 3rem
-}
-
-.certificates h3 {
-    font-size: 2rem
 }
 
 .certificates-gallery {
@@ -533,41 +535,48 @@ header .cta:hover {
 
 #portfolio {
     padding: 2rem 1rem;
-    overflow: visible
+    overflow: visible;
 }
 
 #portfolio h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    color: #333
+    color: #333;
 }
 
 .portfolio-gallery {
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem
+    padding: 0 1rem;
 }
 
 .portfolio-item {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,.1)
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .portfolio-item:hover {
-    transform: none;
-    box-shadow: 0 6px 12px rgba(0,0,0,.2)
+    transform: scale(1.05); /* Scale the entire item slightly */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Add a stronger shadow */
 }
 
 .portfolio-item img {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 10px
+    border-radius: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth effect */
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1); /* Scale the image slightly */
+    opacity: 0.9; /* Add a subtle opacity effect */
 }
 
 .lightbox {
@@ -795,7 +804,6 @@ header .cta:hover {
     background: #e63946;
     transform: translateY(-5px)
 }
-
 
 footer {
     background: #ffccd5;
