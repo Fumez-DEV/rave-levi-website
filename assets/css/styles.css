@@ -88,9 +88,11 @@
     margin-right: auto
 }
 
-.about-features,header nav {
+header nav {
     margin: 0 auto;
-    max-width: 1200px
+    max-width: 1200px;
+    justify-content: space-between;
+    padding: 1rem 2rem
 }
 
 #about h2,#services h2 {
@@ -142,11 +144,6 @@ header {
     top: 0;
     z-index: 1000;
     width: 100%
-}
-
-header nav {
-    justify-content: space-between;
-    padding: 1rem 2rem
 }
 
 header .logo a,header nav {
@@ -294,26 +291,108 @@ header .cta:hover {
     transform: translateY(0)
 }
 
-#about h2 {
+#about h2,.certificates h3 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
     color: #333
 }
 
 #about p {
-    font-size: 1.3rem;
-    margin-bottom: 2.5rem;
-    line-height: 1.8;
-    color: #555;
-    max-width: 900px;
-    padding: 0 1rem
+    font-size: 1.2rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    color: #555
 }
 
 .about-features {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap: 2.5rem;
-    padding: 1rem
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 3rem
+}
+
+.certificates {
+    margin-top: 3rem
+}
+
+.certificates h3 {
+    font-size: 2rem
+}
+
+.certificates-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto
+}
+
+.certificate-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,.1);
+    transition: transform .3s ease,box-shadow .3s ease
+}
+
+.certificate-item img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0,0,0,.2)
+}
+
+@media (max-width:768px) {
+    .about-features,.certificates-gallery {
+        grid-template-columns: 1fr
+    }
+
+    #about h2 {
+        font-size: 2rem
+    }
+
+    #about p {
+        font-size: 1rem
+    }
+
+    .feature-item h3 {
+        font-size: 1.3rem
+    }
+
+    .feature-item p {
+        font-size: .9rem
+    }
+
+    .certificates h3 {
+        font-size: 1.8rem
+    }
+}
+
+@media (max-width:480px) {
+    #about h2 {
+        font-size: 1.8rem
+    }
+
+    #about p {
+        font-size: .9rem
+    }
+
+    .feature-item {
+        padding: 1rem
+    }
+
+    .feature-item h3 {
+        font-size: 1.2rem
+    }
+
+    .feature-item p {
+        font-size: .85rem
+    }
+
+    .certificates h3 {
+        font-size: 1.5rem
+    }
 }
 
 .feature-item {
@@ -633,6 +712,11 @@ header .cta:hover {
     font-weight: 700
 }
 
+.contact-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: .5rem
+}
+
 #contact p,#pricing p,.contact-btn i {
     font-size: 1.2rem
 }
@@ -670,12 +754,20 @@ header .cta:hover {
     animation: none
 }
 
-.contact-item h3 {
-    font-size: 1.3rem;
-    margin-bottom: .5rem
+.contact-btn {
+    text-decoration: none;
+    display: inline-block;
+    background: #ff6b6b;
+    color: #fff;
+    padding: .8rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,.1);
+    transition: background .3s,transform .2s
 }
 
-.contact-btn,.contact-item a,.footer-nav li a {
+.contact-item a,.footer-nav li a {
     font-size: 1rem;
     text-decoration: none
 }
@@ -687,18 +779,6 @@ header .cta:hover {
 
 .contact-item a:hover {
     color: #e63946
-}
-
-.contact-btn {
-    display: inline-block;
-    background: #ff6b6b;
-    color: #fff;
-    padding: .8rem 1.5rem;
-    font-size: 1.1rem;
-    font-weight: 700;
-    border-radius: 30px;
-    box-shadow: 0 4px 6px rgba(0,0,0,.1);
-    transition: background .3s,transform .2s
 }
 
 .contact-btn i {
@@ -843,6 +923,11 @@ footer {
         font-size: .9rem
     }
 
+    .hero-btn {
+        padding: .7rem 1.5rem;
+        box-shadow: 0 3px 6px rgba(0,0,0,.1)
+    }
+
     .logo img {
         max-height: 50px;
         width: 50px
@@ -862,11 +947,6 @@ footer {
         font-size: 1rem;
         line-height: 1.4;
         margin-bottom: 1.5rem
-    }
-
-    .hero-btn {
-        padding: .7rem 1.5rem;
-        box-shadow: 0 3px 6px rgba(0,0,0,.1)
     }
 
     #about,#hero {
@@ -1037,6 +1117,10 @@ footer {
         border-radius: 15px
     }
 
+    .service-item {
+        padding: 1rem
+    }
+
     .feature-item h3,.service-item h3 {
         font-size: 1.4rem
     }
@@ -1047,10 +1131,6 @@ footer {
 
     #services h2 {
         margin-bottom: 1.2rem
-    }
-
-    .service-item {
-        padding: 1rem
     }
 
     #contact p,#pricing p,.contact-btn,.footer-nav li a,.pricing-btn,.service-item p {
@@ -1127,4 +1207,3 @@ footer {
 .scrollable-container {
     overflow-y: scroll
 }
-
