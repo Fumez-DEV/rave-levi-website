@@ -22,19 +22,44 @@
       type="image/x-icon"
     />
 
-    <!-- Fonts -->
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Inline Critical Fonts -->
+    <style>
+      @font-face {
+        font-family: 'Assistant';
+        font-style: normal;
+        font-weight: 400;
+        src: url('https://fonts.gstatic.com/s/assistant/v13/xxx.woff2') format('woff2');
+        font-display: swap;
+      }
+      @font-face {
+        font-family: 'Noto Sans Hebrew';
+        font-style: normal;
+        font-weight: 400;
+        src: url('https://fonts.gstatic.com/s/notosanshebrew/v15/yyy.woff2') format('woff2');
+        font-display: swap;
+      }
+    </style>
+
+    <!-- Deferred Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Noto+Sans+Hebrew:wght@400;500&display=swap"
       rel="stylesheet"
+      media="print"
+      onload="this.media='all'"
     />
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/styles.css" />
 
-    <!-- FontAwesome -->
+    <!-- Deferred FontAwesome -->
     <script
       src="https://kit.fontawesome.com/b42ec18c50.js"
       crossorigin="anonymous"
+      defer
     ></script>
 
     <!-- Open Graph Meta Tags -->
@@ -48,7 +73,7 @@
     />
     <meta
       property="og:image"
-      content="https://rave-nails.netlify.app/assets/images/nailsbanner.png"
+      content="https://rave-nails.netlify.app/assets/images/nailsbanner.webp"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -68,7 +93,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://rave-nails.netlify.app/assets/images/nailsbanner.png"
+      content="https://rave-nails.netlify.app/assets/images/nailsbanner.webp"
     />
 
     <!-- Structured Data (JSON-LD for SEO) -->
@@ -78,7 +103,7 @@
           "@type": "LocalBusiness",
           "name": "רווה לוי ניילס",
           "description": "סטודיו למניקור ופדיקור בג'ל בתל אביב",
-          "image": "https://rave-nails.netlify.app/assets/images/nailsbanner.png",
+          "image": "https://rave-nails.netlify.app/assets/images/nailsbanner.webp",
           "telephone": "054-926-2956",
           "address": {
               "@type": "PostalAddress",
