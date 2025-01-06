@@ -1168,7 +1168,7 @@ footer {
 
 
     #portfolio h2 {
-        font-size: 1.8rem;
+        font-size: 2.5rem;
         margin-bottom: 1rem
     }
 
@@ -1262,7 +1262,7 @@ footer {
     }
 
     #about h2,#hero h1,#services h2,.feature-icon,.service-icon {
-        font-size: 2rem
+        font-size: 2.5rem
     }
 
     #about p,.footer-social a {
@@ -1298,9 +1298,8 @@ footer {
         border-radius: 8px
     }
 
-
     #portfolio h2 {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
         margin-bottom: .8rem
     }
 
