@@ -543,35 +543,35 @@ header .cta:hover {
 
 #portfolio {
     padding: 2rem 1rem;
-    overflow: visible
+    overflow: visible;
 }
 
 #portfolio h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    color: #333
+    color: #333;
 }
 
 .portfolio-gallery {
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 1.5rem;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1rem
+    padding: 0 1rem;
 }
 
 .portfolio-item {
     position: relative;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,.1);
-    transition: transform .3s ease,box-shadow .3s ease
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .portfolio-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0,0,0,.2)
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .portfolio-item img {
@@ -579,12 +579,20 @@ header .cta:hover {
     height: auto;
     display: block;
     border-radius: 10px;
-    transition: transform .3s ease,opacity .3s ease
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .portfolio-item:hover img {
     transform: scale(1.1);
-    opacity: .9
+    opacity: 0.9;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .portfolio-gallery {
+        grid-template-columns: repeat(2, 1fr); /* Two items per row */
+        gap: 1rem; /* Adjust gap for better spacing on small screens */
+    }
 }
 
 .lightbox {
@@ -1043,10 +1051,7 @@ footer {
 }
 
 @media (max-width:992px) {
-    .portfolio-gallery {
-        grid-template-columns: repeat(3,1fr);
-        gap: 1rem
-    }
+
 
     #portfolio h2 {
         font-size: 2rem
@@ -1161,18 +1166,12 @@ footer {
         font-size: .95rem
     }
 
-    .portfolio-gallery {
-        gap: .8rem
-    }
 
     #portfolio h2 {
         font-size: 1.8rem;
         margin-bottom: 1rem
     }
 
-    .portfolio-gallery,.pricing-container {
-        grid-template-columns: repeat(2,1fr)
-    }
 
     #contact h2,#pricing h2 {
         font-size: 2rem
@@ -1299,10 +1298,6 @@ footer {
         border-radius: 8px
     }
 
-    .portfolio-gallery {
-        grid-template-columns: 1fr;
-        gap: .5rem
-    }
 
     #portfolio h2 {
         font-size: 1.5rem;
